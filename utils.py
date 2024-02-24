@@ -1,6 +1,14 @@
-# Imports
-
+#!/usr/bin/env python3
+import os
+import sys
+d = os.path.dirname(os.path.abspath(__file__)) # This is your Project Root
+sys.path.append(d)
 # Functions
+def readInputFile(filename: str) -> list[str]:
+    with open(filename, "r") as file:
+        input = [line.strip() for line in file.readlines()]
+    return input
+
 def first_and_last(list: list[str]) -> list[str]:
     """
     Created originally for the trebuchet problem, this function takes a list of strings and returns the first and last elements of the list.
