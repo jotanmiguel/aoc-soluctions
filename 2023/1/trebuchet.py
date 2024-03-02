@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+from utils import aoc_utils as utils
 import re
 
 def part1(input_file: str = "input.txt"):
@@ -67,7 +69,6 @@ def find_numbers(line: str):
             i += len([get_number_name(number_name)])
     return findFirstAndLastNumber([int(num) for num in possible_nums if num.isdigit()])
 
-
 def findFirstAndLastNumber(nums: list[int]) -> int:
     return int(str(nums[0]) + str(nums[-1]))
 
@@ -77,8 +78,7 @@ def part2(input_file: str = "input.txt"):
     for line in input:
         total += find_numbers(line)
     return total
-
-    
+   
 def solve(input_file: str = "input.txt"):
     print("Solving part 1 for ", input_file)
     print(part1(input_file))
